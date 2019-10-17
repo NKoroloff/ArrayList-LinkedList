@@ -22,7 +22,7 @@ const arrayList = {
         return  this[elToPush] = el;
     },
     pop: function(){
-        if(this[0] === undefined){
+        if(this[0] === undefined || arguments.length > 0){
             return false;
         }
         let delLastEl = this.length() - 1;
@@ -159,22 +159,6 @@ const arrayList = {
 
             this.root.length++
         },
-        /*reverse: function(){
-            this.root.length = 0
-            let length = 0;
-            let tmpList = this.root
-            let tmpNoda = this.root/!*.nextNoda.el;*!/
-            while(tmpNoda.nextNoda !== null){
-            /!*if()*!/
-                tmpNoda = tmpNoda.nextNoda
-                tmpList = this.unshift(tmpNoda.el)
-                console.log(tmpList)
-
-            }
-            console.log(linkedList)
-            /!*this.root = tmpList*!/
-
-        },*/
         pop: function () {
             if(this.root.length === 0){
                 return false
@@ -279,22 +263,7 @@ const linkedList = {
 
         this.root.length++
     },
-    /*reverse: function(){
-        this.root.length = 0
-        let length = 0;
-        let tmpList = this.root
-        let tmpNoda = this.root/!*.nextNoda.el;*!/
-        while(tmpNoda.nextNoda !== null){
-        /!*if()*!/
-            tmpNoda = tmpNoda.nextNoda
-            tmpList = this.unshift(tmpNoda.el)
-            console.log(tmpList)
 
-        }
-        console.log(linkedList)
-        /!*this.root = tmpList*!/
-
-    },*/
     pop: function () {
         if(this.root.length === 0 || arguments.length > 0){
             return false
@@ -437,18 +406,6 @@ const linkedList = {
             }
             return string;
         },
-        /*sort: function () {
-            let tmp;
-            for(let i = 0; this[i] !==undefined; i++) {
-                for(let j = 0; j < i; j++) {
-                    if (this[j] > this[j + 1]) {
-                        tmp = this[j];
-                        this[j] = this[j + 1];
-                        this[j + 1] = tmp;
-                    }
-                }
-            }
-        },*/
         toLinkedList: function () {
             if(arguments.length > 0 ||this[0] === undefined){
                 return false;
