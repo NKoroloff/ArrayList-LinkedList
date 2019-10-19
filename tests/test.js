@@ -1,3 +1,4 @@
+/*
 describe('Array list', function () {
     beforeEach(function () {
         arrayList.clearArray();
@@ -269,7 +270,7 @@ describe('Array list', function () {
             assert.equal(exp, act);
         })
     })
-    /*describe('sort method', function () {
+    /!*describe('sort method', function () {
         it('create method sort to return the sorting array', function () {
             arrayList.push(3);
             arrayList.push(4);
@@ -285,7 +286,7 @@ describe('Array list', function () {
             assert.deepEqual(exp, act)
 
         })
-    })*/
+    })*!/
 
     describe('create method toLinkedList to create new the same object linkedLost inside ' +
         'our arrayList ', function () {
@@ -560,4 +561,4 @@ describe('LinkedList', function () {
             assert.equal(exp, act)
         })
     })
-});
+});*/

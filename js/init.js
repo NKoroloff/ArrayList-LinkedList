@@ -1,3 +1,4 @@
+/*
 const arrayList = {
     length: function () {
         if(arguments.length > 0){
@@ -79,9 +80,9 @@ const arrayList = {
         if(arguments.length > 0 ||this[0] === undefined){
             return false;
         }
-        
+
         let LinkedList = this.linkedList;
-        
+
         for(let i = 0; i <= this.length(); ++i){
             if(this[i] !== undefined){
                 LinkedList.push(this[i])
@@ -423,3 +424,113 @@ const linkedList = {
         },
     },
 };
+*/
+const ArrayList = {
+    Collection: [] ,
+    Length: 0 ,
+
+    push: function(el){
+        this.Collection[this.Length] = el;
+        this.Length++;
+    },
+
+    pop: function(){
+        let tempArray = [];
+        for(let i = 0; i < this.Length - 1; i++){
+            tempArray[i] = this.Collection[i];
+        }
+        this.Collection = tempArray;
+        this.Length--;
+    },
+
+    size: function () {
+        return `ArrayList size = ${this.Length}`;
+    },
+
+    shift: function () {
+        let tempArray = [];
+        let k = 0;
+        for (let i = 1; i < this.Length; i++){
+            tempArray[k] = this.Collection[i];
+            k++;
+        }
+        this.Collection = tempArray;
+        this.Length--;
+        return this.Collection;
+
+    },
+
+    unshift: function(el){
+        let tempArray = [];
+        let k = 0;
+        for (let i = 0; i < this.Length; i++){
+            tempArray[k + 1] = this.Collection[i];
+            k++;
+        }
+        this.Collection = tempArray;
+        this.Collection[0] = el;
+        this.Length++;
+    },
+
+    makeString: function () {
+        let tempArray = '';
+        for (let i = 0; i < this.Length; i++){
+            tempArray += `${this.Collection[i]},`;
+        }
+        tempArray = tempArray.substring(0, tempArray.length - 1);
+        this.Collection = tempArray;
+
+    },
+
+    sortSelect: function () {
+        for (let i = 0; i < this.Collection.length; i++) {
+            for (let k = i; k < this.Collection.length; k++) {
+
+                if (this.Collection[k] < this.Collection[i]) {
+                    let tempArr = this.Collection[i];
+                    this.Collection[i] = this.Collection[k];
+                    this.Collection[k] = tempArr;
+                }
+            }
+        }
+    },
+
+};
+
+const LinkedList = {
+    root: {
+        next: null,
+        prev: null,
+    },
+
+    createNode: function (el, prevNode) {
+        return {
+            el: el ? el : null,
+            next: null,
+            prev: prevNode ? prevNode : null,
+        };
+    },
+
+    push: function (el) {
+        let newNoda = this.createNode(el);
+        let Noda = this.root;
+        while (Noda.next && Noda.next.el != null) {
+            Noda = Noda.next;
+            newNoda.prev = Noda;
+        }
+        Noda.next = newNoda;
+        this.root.lenght = Number(this.root.lenght) + 1;
+        return el;
+    },
+
+};
+LinkedList.push(2);
+LinkedList.push(3);
+LinkedList.push(4);
+
+console.log(LinkedList);
+
+
+
+
+
