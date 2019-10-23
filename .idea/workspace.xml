@@ -4,8 +4,6 @@
     <list default="true" id="e8a4d324-a4eb-4493-82d7-6e90632f3a56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +18,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Home Work 7" />
     <property name="settings.editor.selected.configurable" value="liveEdit" />
   </component>
   <component name="RunDashboard">
@@ -72,7 +70,8 @@
       <workItem from="1571470053935" duration="10265000" />
       <workItem from="1571552894555" duration="8142000" />
       <workItem from="1571594640403" duration="135000" />
-      <workItem from="1571594784565" duration="10435000" />
+      <workItem from="1571594784565" duration="16655000" />
+      <workItem from="1571688808485" duration="17770000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@ const ArrayList = {
 
     clearArray: function () {
         this.length = 0;
-        this.List = [];
+        this.Collection = [];
     },
 
     push: function(el){
@@ -23,7 +23,7 @@ const ArrayList = {
     },
 
     size: function () {
-        return `ArrayList size = ${this.Length}`;
+        return this.Length;
     },
 
     shift: function () {
@@ -51,7 +51,7 @@ const ArrayList = {
         this.Length++;
     },
 
-    makeString: function () {
+    toString: function () {
         let tempArray = '';
         for (let i = 0; i < this.Length; i++){
             tempArray += `${this.Collection[i]},`;
@@ -61,7 +61,7 @@ const ArrayList = {
 
     },
 
-    sortSelect: function () {
+    sort: function () {
         for (let i = 0; i < this.Collection.length; i++) {
             for (let k = i; k < this.Collection.length; k++) {
 
@@ -74,24 +74,28 @@ const ArrayList = {
         }
     },
 
+
 };
 
 const LinkedList = {
     root: {
         head : null,
-        tail :null,
+        tail : null,
         length :0,
     },
+
     createNode: function(el) {
         return {
-            data: el,
+            data: el ? el : null,
             prev : null,
             next: null,
         };
     },
+
     size: function () {
         return `LinkedList size = ${this.root.length}`;
     },
+
     push: function(el) {
         let node =  this.createNode(el);
 
@@ -105,6 +109,7 @@ const LinkedList = {
         }
         this.root.length++;
     },
+
     pop: function(){
         if(!this.root.head) return null
 
@@ -120,6 +125,7 @@ const LinkedList = {
         }
         this.root.length--;
     },
+
     unshift: function(el){
         let node =  this.createNode(el);
 
@@ -134,6 +140,7 @@ const LinkedList = {
         this.root.length++;
 
     },
+
     shift: function(){
         if(!this.root.head) return null;
         const node = this.root.head.next;
@@ -146,28 +153,54 @@ const LinkedList = {
         }
         this.root.length--;
     },
-/*    toString: function(){
+
+    toString: function(){
         if(!this.root.head) return null;
-        let newNoda = this.root;
-        newNoda = newNoda.head;
-        let string = String(newNoda.data);
-        while (newNoda.head && newNoda.tail.next != null) {
-             newNoda = newNoda.tail;
-             string += ", " + String(newNoda.data);
-             console.log(string)
+        let node = this.root;
+        node = node.head;
+        let string = node.data;
+        while (node.next != null) {
+            node = node.next;
+            string += ", "  + String(node.data) ;
         }
         return string;
-    },*/
-/*    toArrayList:  function () {
-        ArrayList.clearArray()
-        let Noda = this.root;
-        while (Noda.data.el && Noda.head != null) {
-            Noda = Noda.tail;
-            ArrayList.push(Noda.data);
+    },
+
+    toArrayList:  function () {
+        let node = this.root.head;
+        let tmpArray = [];
+        let i = 0;
+
+        while (node.next!= null) {
+           tmpArray[i] = node.data;
+           i++;
+           node = node.next;
         }
-        return ArrayList;
-    }*/
+
+        tmpArray[i] = node.data;
+        ArrayList.Collection = tmpArray;
+        console.log(tmpArray)
+        return tmpArray;
+    }
 };
+
+
+
+
+
+LinkedList.push(3);
+LinkedList.push(5);
+LinkedList.push(4);
+//console.log(LinkedList)
+LinkedList.toArrayList();
+
+
+
+
+
+console.log(ArrayList.Collection)
+
+
 
 
 
