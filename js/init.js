@@ -181,24 +181,55 @@ const LinkedList = {
         ArrayList.Collection = tmpArray;
         console.log(tmpArray)
         return tmpArray;
-    }
+    },
+    sort: function(compare){
+
+            if (compare) {
+                if (typeof compare == "function") {
+
+                    for (let i = 0; i < this.root.length; i++) {
+
+                        let tmpNoda = this.root.head;
+                        for (let j = 0; j < this.root.length; j++) {
+
+                            if (tmpNoda.next === null) break;
+                            if (compare(tmpNoda.data, tmpNoda.next.data) > 0) {
+                                let tmp = tmpNoda.data;
+                                tmpNoda.data = tmpNoda.next.data;
+                                tmpNoda.next.data = tmp;
+                            }
+                            tmpNoda = tmpNoda.next;
+                        }
+                    }
+                }
+                else {
+                    return false
+                }
+            } else {
+                for (let i = 0; i < this.root.length; i++) {
+                    let tmpNoda = this.root.head;
+
+                    for (let j = 0; j < this.root.length; j++) {
+
+                        if (tmpNoda.next === null) break;
+                        if (String(tmpNoda.data) > String(tmpNoda.next.data)) {
+                            let tmp = tmpNoda.data;
+                            tmpNoda.data = tmpNoda.next.data;
+                            tmpNoda.next.data = tmp;
+                        }
+
+                        tmpNoda = tmpNoda.next
+                    }
+                }
+            }
+        }
 };
 
 
 
 
 
-LinkedList.push(3);
-LinkedList.push(5);
-LinkedList.push(4);
-//console.log(LinkedList)
-LinkedList.toArrayList();
 
-
-
-
-
-console.log(ArrayList.Collection)
 
 
 
